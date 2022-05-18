@@ -1,13 +1,11 @@
 import { useMediaQuery } from "../hooks/useMediaQuery";
 
-type Props = {};
-
 export const Header = () => {
   // equivalent to 'sm' breakpoint in Tailwind
   const wideScreen = useMediaQuery("(min-width: 680px)");
 
   return (
-    <div className="h-16 sm:h-24 w-full flex flex-row justify-between items-center border-b border-white px-4 sm:px-8 bg-neutral-700 text-white">
+    <header className="h-16 sm:h-24 w-full flex flex-row justify-between items-center border-b border-white px-4 sm:px-8 bg-neutral-700 text-white">
       <p className="text-2xl sm:text-4xl">Evan Doyle</p>
       <div className="flex flex-row jusify-center items-center gap-2">
         {wideScreen ? (
@@ -21,6 +19,6 @@ export const Header = () => {
           <p>Burger</p>
         )}
       </div>
-    </div>
+    </header>
   );
 };
