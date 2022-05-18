@@ -1,4 +1,8 @@
 import { useMediaQuery } from "../hooks/useMediaQuery";
+import { Github } from "../icons/Github";
+import { Twitter } from "../icons/Twitter";
+import { LinkedIn } from "../icons/LinkedIn";
+import { Burger } from "../icons/Burger";
 
 export const Header = () => {
   // equivalent to 'sm' breakpoint in Tailwind
@@ -11,12 +15,14 @@ export const Header = () => {
         {wideScreen ? (
           <>
             <p className="text-2xl border-r-2 border-white pr-4 py-1">Blog</p>
-            <p className="pl-2">icon1</p>
-            <p>icon2</p>
-            <p>icon3</p>
+            <div className="pl-2">
+              <Github />
+            </div>
+            <Twitter />
+            <LinkedIn />
           </>
         ) : (
-          <p>Burger</p>
+          <Burger />
         )}
       </div>
     </header>
