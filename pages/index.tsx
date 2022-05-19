@@ -40,10 +40,10 @@ export default function Home() {
                   SF Bay Area with Django and React expertise.
                 </p>
                 <div className="flex justify-start items-center gap-8 sm:text-xl lg:text-2xl">
-                  <a href="#" className="hover:text-smoke-400">
+                  <a href="#" className="hover:text-ash">
                     <span className="underline">Hire me</span> &gt;
                   </a>
-                  <a href="#" className="hover:text-smoke-400">
+                  <a href="#" className="hover:text-ash">
                     <span className="underline">View services</span> &gt;
                   </a>
                 </div>

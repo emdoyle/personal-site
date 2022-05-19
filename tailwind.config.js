@@ -6,8 +6,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        coolblue: { DEFAULT: "#81A8C9", 400: "#AEBEC8" },
-        smoke: { DEFAULT: "#3C3C3C", 400: "#6F6F6F" },
+        smoke: "#3B3B3B",
+        burntgreen: "#4F5D2F",
+        ash: "#7D7E75",
+        steel: "#B0B2B8",
+        coolblue: "#CFD6EA",
       },
     },
   },
