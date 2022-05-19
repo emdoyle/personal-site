@@ -21,8 +21,8 @@ export default function Home() {
       <Header />
       <Content>
         <Section>
-          <div className="flex flex-col sm:flex-row gap-4 justify-between items-center w-5/6 sm:max-w-[800px]">
-            <div className="w-24 sm:w-52 rounded border border-white shadow-[0px_0px_8px_10px_rgba(112,112,112,.25)]">
+          <div className="flex flex-col sm:flex-row gap-4 justify-between items-center w-5/6 sm:max-w-[900px]">
+            <div className="w-32 sm:w-52 rounded border border-smoke shadow-[0px_0px_8px_10px_rgba(112,112,112,.25)]">
               <Image
                 alt="Evan Doyle Headshot"
                 className="rounded"
@@ -30,7 +30,7 @@ export default function Home() {
                 src={Headshot}
               />
             </div>
-            <div className="w-full sm:w-96">
+            <div className="w-full sm:w-1/2">
               <h1 className="text-2xl sm:text-4xl pb-4">Hi, I&apos;m Evan!</h1>
               <p className="sm:text-2xl pb-4">
                 I&apos;m a <strong>Full-Stack</strong> Web Developer from the SF
