@@ -11,6 +11,7 @@ module.exports = {
         ash: "#7D7E75",
         steel: "#B0B2B8",
         coolblue: "#CFD6EA",
+        offwhite: "#E8E8E8",
       },
     },
   },

@@ -64,14 +64,21 @@ export default function Home() {
             </div>
           </div>
         </Section>
-        <Section>
+        <Section height="h-[800px] lg:h-[450px]">
           <div className="flex flex-col justify-start items-center h-full">
-            <div className="flex justify-end items-center h-24 w-5/6 sm:max-w-[1100px]">
+            <div className="flex justify-end items-center h-24 w-5/6 sm:max-w-[1100px] pb-8">
               <h2 className="text-2xl sm:text-4xl font-semibold">Services</h2>
             </div>
-            <div className="h-full flex flex-col sm:flex-row gap-4 justify-between items-center w-5/6 sm:max-w-[900px]">
-              <p>Left</p>
-              <p>Right</p>
+            <div className="h-full flex flex-col lg:flex-row gap-4 justify-between items-center w-5/6 sm:max-w-[1200px]">
+              <div className="flex flex-col justify-center items-center gap-4 rounded-lg bg-offwhite border border-smoke p-4 sm:p-8 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-48 lg:h-64 w-2/3 lg:w-64">
+                <p>Hello, world</p>
+              </div>
+              <div className="flex flex-col justify-center items-center gap-4 rounded-lg bg-offwhite border border-smoke p-4 sm:p-8 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-48 lg:h-64 w-2/3 lg:w-64">
+                <p>Hello World</p>
+              </div>
+              <div className="flex flex-col justify-center items-center gap-4 rounded-lg bg-offwhite border border-smoke p-4 sm:p-8 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-48 lg:h-64 w-2/3 lg:w-64">
+                <p>Hello World</p>
+              </div>
             </div>
           </div>
         </Section>
