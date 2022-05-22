@@ -93,14 +93,30 @@ export default function Home() {
             </div>
           </div>
         </Section>
-        <Section>
+        <Section height="h-[600px]">
           <div className="flex flex-col justify-start items-center h-full">
-            <div className="flex justify-center items-center h-24 w-5/6 sm:max-w-[1100px]">
+            <div className="flex justify-center items-center h-24">
               <h2 className="text-3xl sm:text-4xl font-semibold">Hire Me</h2>
             </div>
-            <div className="h-full flex flex-col sm:flex-row gap-4 justify-between items-center w-5/6 sm:max-w-[900px]">
-              <p>Left</p>
-              <p>Right</p>
+            <div className="h-full flex flex-col gap-4 pb-6 justify-start items-center text-center w-5/6 sm:max-w-[600px]">
+              <p className="text-lg sm:text-xl">
+                Send me a message and I&apos;ll respond within 48 hours.
+              </p>
+              <div className="h-10 w-full flex flex-row justify-between items-center gap-8">
+                <input
+                  className="h-full w-1/5 p-2 rounded border border-smoke"
+                  placeholder="Name"
+                />
+                <input
+                  className="h-full grow p-2 rounded border border-smoke"
+                  placeholder="Email"
+                />
+              </div>
+              <textarea
+                className="grow w-full p-2 rounded border border-smoke"
+                placeholder="My project is about..."
+              />
+              <div className="h-10 w-full border-2" />
             </div>
           </div>
         </Section>
