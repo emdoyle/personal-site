@@ -54,9 +54,12 @@ export default function Home() {
         <Section>
           <div className="flex flex-col justify-start items-center h-full">
             <div className="flex justify-start items-center h-24 w-5/6 sm:max-w-[1100px]">
-              <h2 className="text-3xl sm:text-4xl font-semibold">
-                Featured Work
-              </h2>
+              <div>
+                <h2 className="text-3xl sm:text-4xl font-semibold">
+                  Featured Work
+                </h2>
+                <hr className="border-2 border-dashed border-smoke" />
+              </div>
             </div>
             <div className="h-full flex flex-col sm:flex-row gap-4 justify-between items-center w-5/6 sm:max-w-[900px]">
               <p>Left</p>
@@ -67,7 +70,10 @@ export default function Home() {
         <Section height="h-[1000px] lg:h-[600px]">
           <div className="flex flex-col justify-start items-center h-full">
             <div className="flex justify-end items-center h-24 w-5/6 lg:max-w-[1100px] pb-8">
-              <h2 className="text-3xl sm:text-4xl font-semibold">Services</h2>
+              <div>
+                <h2 className="text-3xl sm:text-4xl font-semibold">Services</h2>
+                <hr className="border-2 border-dashed border-smoke" />
+              </div>
             </div>
             <div className="h-full flex flex-col lg:flex-row justify-between items-center w-5/6 lg:max-w-[1200px]">
               <div className="flex flex-col justify-center items-center gap-4 rounded-lg bg-offwhite border border-smoke p-8 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-64 lg:h-80 w-2/3 lg:w-[30%]">
@@ -96,13 +102,16 @@ export default function Home() {
         <Section height="h-[600px]">
           <form className="flex flex-col justify-start items-center h-full">
             <div className="flex justify-center items-center h-24">
-              <h2 className="text-3xl sm:text-4xl font-semibold">Hire Me</h2>
+              <div>
+                <h2 className="text-3xl sm:text-4xl font-semibold">Hire Me</h2>
+                <hr className="border-2 border-dashed border-smoke" />
+              </div>
             </div>
             <div className="h-full flex flex-col gap-4 pb-6 justify-start items-center text-center w-5/6 sm:max-w-[600px]">
               <p className="text-lg sm:text-xl">
                 Send me a message and I&apos;ll respond within 48 hours.
               </p>
-              <div className="h-10 w-full flex flex-row justify-between items-center gap-8">
+              <div className="basis-10 w-full flex flex-wrap flex-row justify-between items-center gap-x-8 gap-y-4">
                 <label htmlFor="name-input" className="hidden">
                   Name
                 </label>
@@ -111,7 +120,7 @@ export default function Home() {
                   name="name"
                   type="text"
                   required
-                  className="h-full w-1/5 p-2 rounded border border-smoke"
+                  className="h-10 w-1/3 min-w-[220px] p-2 rounded border border-smoke"
                   placeholder="Name"
                 />
                 <label htmlFor="email-input" className="hidden">
@@ -122,7 +131,7 @@ export default function Home() {
                   name="email"
                   type="text"
                   required
-                  className="h-full grow p-2 rounded border border-smoke"
+                  className="h-10 grow min-w-[300px] p-2 rounded border border-smoke"
                   placeholder="Email"
                 />
               </div>
