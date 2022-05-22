@@ -9,8 +9,8 @@ import { Section } from "../components/Section";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 
 export default function Home() {
-  // equivalent to 'sm' breakpoint in Tailwind
-  const wideScreen = useMediaQuery("(min-width: 680px)");
+  // equivalent to 'lg' breakpoint in Tailwind
+  const wideScreen = useMediaQuery("(min-width: 1024px)");
   return (
     <Container>
       <Head>
@@ -37,9 +37,10 @@ export default function Home() {
                 </h1>
                 <p className="sm:text-2xl lg:text-3xl pb-4">
                   I&apos;m a <strong>Full-Stack</strong> Web Developer from the
-                  SF Bay Area with Django and React expertise.
+                  SF Bay Area with expertise in Fintech and Blockchain
+                  applications.
                 </p>
-                <div className="flex justify-start items-center gap-8 sm:text-lg md:text-xl lg:text-2xl">
+                <div className="flex justify-start items-center gap-6 md:gap-8 sm:text-lg md:text-xl lg:text-2xl">
                   <a href="#" className="hover:text-ash">
                     <span className="underline">Hire me</span> &gt;
                   </a>
@@ -51,9 +52,9 @@ export default function Home() {
             </div>
           </div>
         </Section>
-        <Section>
+        <Section height="h-[600px]">
           <div className="flex flex-col justify-start items-center h-full">
-            <div className="flex justify-start items-center h-24 w-5/6 sm:max-w-[1100px]">
+            <div className="flex justify-start items-center h-24 w-5/6 sm:max-w-[1100px] pb-8">
               <div>
                 <h2 className="text-3xl sm:text-4xl font-semibold">
                   Featured Work
@@ -61,9 +62,21 @@ export default function Home() {
                 <hr className="border-2 border-dashed border-smoke" />
               </div>
             </div>
-            <div className="h-full flex flex-col sm:flex-row gap-4 justify-between items-center w-5/6 sm:max-w-[900px]">
-              <p>Left</p>
-              <p>Right</p>
+            <div className="h-full flex flex-wrap gap-4 justify-center lg:justify-between items-center w-5/6 max-w-[950px]">
+              {wideScreen && (
+                <div className="flex flex-col w-1/2 justify-center items-center gap-8">
+                  <div className="w-5/6 max-w-[350px] h-20 p-2 rounded-lg border border-smoke bg-offwhite">
+                    Project
+                  </div>
+                  <div className="w-5/6 max-w-[350px] h-20 p-2 rounded-lg border border-smoke bg-offwhite">
+                    Project
+                  </div>
+                  <div className="w-5/6 max-w-[350px] h-20 p-2 rounded-lg border border-smoke bg-offwhite">
+                    Project
+                  </div>
+                </div>
+              )}
+              <div className="h-96 w-96 border border-smoke rounded-lg" />
             </div>
           </div>
         </Section>
