@@ -138,7 +138,7 @@ export default function Home() {
               />
               <div className="w-full flex justify-start items-center">
                 <input
-                  className="h-12 w-28 cursor-pointer shadow-xl rounded-lg border-2 py-2 px-4 hover:scale-105 active:scale-100"
+                  className="h-12 w-28 cursor-pointer shadow-xl rounded-lg border border-smoke py-2 px-4 hover:scale-105 active:scale-100 bg-softgreen text-smoke"
                   type="submit"
                   value="Send"
                 />
