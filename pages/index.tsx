@@ -64,23 +64,31 @@ export default function Home() {
             </div>
           </div>
         </Section>
-        <Section height="h-[1000px] lg:h-[450px]">
+        <Section height="h-[1000px] lg:h-[600px]">
           <div className="flex flex-col justify-start items-center h-full">
-            <div className="flex justify-end items-center h-24 w-5/6 sm:max-w-[1100px] pb-8">
+            <div className="flex justify-end items-center h-24 w-5/6 lg:max-w-[1100px] pb-8">
               <h2 className="text-3xl sm:text-4xl font-semibold">Services</h2>
             </div>
-            <div className="h-full flex flex-col lg:flex-row gap-4 lg:gap-12 justify-between items-center w-5/6 sm:max-w-[1200px]">
-              <div className="flex flex-col justify-center items-center gap-4 rounded-lg bg-offwhite border border-smoke p-8 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-64 w-2/3 lg:w-1/3">
-                <div className="w-60 h-full border-2 border-smoke rounded" />
-                <h1 className="text-xl lg:text-2xl">Service Title</h1>
+            <div className="h-full flex flex-col lg:flex-row justify-between items-center w-5/6 lg:max-w-[1200px]">
+              <div className="flex flex-col justify-center items-center gap-4 rounded-lg bg-offwhite border border-smoke p-8 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-64 lg:h-80 w-2/3 lg:w-[30%]">
+                <div className="w-40 h-32 border-2 border-smoke rounded" />
+                <div className="h-1/4 text-center flex flex-col justify-center items-center pt-4">
+                  <h1 className="text-xl lg:text-2xl">Web App Development</h1>
+                </div>
               </div>
-              <div className="flex flex-col justify-center items-center gap-4 rounded-lg bg-offwhite border border-smoke p-8 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-64 w-2/3 lg:w-1/3">
-                <div className="w-60 h-full border-2 border-smoke rounded" />
-                <h1 className="text-xl lg:text-2xl">Service Title</h1>
+              <div className="flex flex-col justify-center items-center gap-4 rounded-lg bg-offwhite border border-smoke p-8 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-64 lg:h-80 w-2/3 lg:w-[30%]">
+                <div className="w-40 h-32 border-2 border-smoke rounded" />
+                <div className="h-1/4 text-center flex flex-col justify-center items-center pt-4">
+                  <h1 className="text-xl lg:text-2xl">MVP Prototyping</h1>
+                </div>
               </div>
-              <div className="flex flex-col justify-center items-center gap-4 rounded-lg bg-offwhite border border-smoke p-8 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-64 w-2/3 lg:w-1/3">
-                <div className="w-60 h-full border-2 border-smoke rounded" />
-                <h1 className="text-xl lg:text-2xl">Service Title</h1>
+              <div className="flex flex-col justify-center items-center gap-4 rounded-lg bg-offwhite border border-smoke p-8 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-64 lg:h-80 w-2/3 lg:w-[30%]">
+                <div className="w-40 h-32 border-2 border-smoke rounded" />
+                <div className="h-1/4 text-center flex flex-col justify-center items-center pt-4">
+                  <h1 className="text-xl lg:text-2xl">
+                    Blockchain Program Development
+                  </h1>
+                </div>
               </div>
             </div>
           </div>
