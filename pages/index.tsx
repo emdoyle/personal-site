@@ -63,7 +63,7 @@ export default function Home() {
             </div>
           </div>
         </Section>
-        <Section height="h-[1000px] lg:h-[600px]">
+        <Section height="h-[800px] lg:h-[600px]">
           <div className="flex flex-col justify-start items-center h-full">
             <div className="flex justify-start items-center h-24 w-5/6 sm:max-w-[1100px] pb-8">
               <div>
@@ -73,66 +73,74 @@ export default function Home() {
                 <hr className="border-2 border-dashed border-smoke" />
               </div>
             </div>
-            <div className="h-full flex flex-wrap-reverse gap-2 justify-center lg:justify-between items-center w-full max-w-[925px]">
-              <div className="flex flex-col w-1/2 justify-center items-center gap-2">
+            <div className="flex flex-wrap-reverse gap-6 lg:gap-2 justify-center lg:justify-between items-center w-full max-w-[925px]">
+              <div className="flex flex-col lg:w-1/2 justify-center items-center gap-2">
                 <div
-                  className={`w-full max-w-[500px] h-28 p-4 rounded-lg border border-smoke bg-offwhite hover:scale-105 active:scale-100 cursor-pointer ${
+                  className={`w-full lg:max-w-[500px] p-4 rounded-lg border border-smoke bg-offwhite hover:scale-105 active:scale-100 cursor-pointer ${
                     selectedWork == Work.Slide ? "scale-105 shadow-xl" : ""
                   }`}
                   onClick={() => setSelectedWork(Work.Slide)}
                 >
                   <div className="flex flex-col justify-center items-start gap-2">
                     <div className="w-full flex justify-between items-center gap-4">
-                      <p className="text-xl">👾 Slide</p>
+                      <p className="text-lg sm:text-xl">👾 Slide</p>
                       <div className="flex justify-between items-center gap-2">
                         <Pill colors="border-ocean text-ocean">React</Pill>
                         <Pill colors="border-crab text-crab">Rust</Pill>
                         <Pill colors="border-royal text-royal">Solana</Pill>
                       </div>
                     </div>
-                    <p>
-                      Expense Management for DAOs. 2nd Place Riptide Winner.
-                    </p>
+                    {wideScreen && (
+                      <p>
+                        Expense Management for DAOs. 2nd Place Riptide Winner.
+                      </p>
+                    )}
                   </div>
                 </div>
                 <div
-                  className={`w-full max-w-[500px] h-28 p-4 rounded-lg border border-smoke bg-offwhite hover:scale-105 active:scale-100 cursor-pointer ${
+                  className={`w-full lg:max-w-[500px] p-4 rounded-lg border border-smoke bg-offwhite hover:scale-105 active:scale-100 cursor-pointer ${
                     selectedWork == Work.Squads ? "scale-105 shadow-xl" : ""
                   }`}
                   onClick={() => setSelectedWork(Work.Squads)}
                 >
                   <div className="flex flex-col justify-center items-start gap-2">
                     <div className="w-full flex justify-between items-center gap-4">
-                      <p className="text-xl">🛠 Squads SDK</p>
+                      <p className="text-lg sm:text-xl">🛠 Squads SDK</p>
                       <div className="flex justify-between items-center gap-2">
                         <Pill colors="border-ocean text-ocean">Typescript</Pill>
                         <Pill colors="border-royal text-royal">Solana</Pill>
                       </div>
                     </div>
-                    <p>
-                      Typescript SDK for the Squads platform. Published to NPM
-                      (@sqds/squads)
-                    </p>
+                    {wideScreen && (
+                      <p>
+                        Typescript SDK for the Squads platform. Published to NPM
+                        (@sqds/squads)
+                      </p>
+                    )}
                   </div>
                 </div>
                 <div
-                  className={`w-full max-w-[500px] h-28 p-4 rounded-lg border border-smoke bg-offwhite hover:scale-105 active:scale-100 cursor-pointer ${
+                  className={`w-full lg:max-w-[500px] p-4 rounded-lg border border-smoke bg-offwhite hover:scale-105 active:scale-100 cursor-pointer ${
                     selectedWork == Work.Accounting ? "scale-105 shadow-xl" : ""
                   }`}
                   onClick={() => setSelectedWork(Work.Accounting)}
                 >
                   <div className="flex flex-col justify-center items-start gap-2">
                     <div className="w-full flex justify-between items-center gap-4">
-                      <p className="text-xl">📊 Accounting Integration</p>
+                      <p className="text-lg sm:text-xl">
+                        📊 Accounting Integration
+                      </p>
                       <div className="flex justify-between items-center gap-2">
                         <Pill colors="border-ocean text-ocean">React</Pill>
                         <Pill colors="border-snake text-snake">Django</Pill>
                       </div>
                     </div>
-                    <p>
-                      Custom connection flows, automatic data syncs, and
-                      connection status alerting for QBO/Xero.
-                    </p>
+                    {wideScreen && (
+                      <p>
+                        Custom connection flows, automatic data syncs, and
+                        connection status alerting for QBO/Xero.
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
