@@ -11,7 +11,7 @@ export const Pill: React.FC<Props> = ({
 }) => {
   return (
     <div
-      className={`rounded-3xl bg-transparent border ${colors} py-1 px-3 text-center text-sm`}
+      className={`rounded-3xl bg-transparent border-2 ${colors} py-1 px-3 text-center text-sm`}
     >
       {children}
     </div>

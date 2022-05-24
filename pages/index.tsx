@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import Headshot from "../public/headshot.jpg";
+import Headshot from "../public/headshot.webp";
 import { Container } from "../components/Container";
 import { Header } from "../components/Header";
 import { Content } from "../components/Content";
@@ -9,12 +9,8 @@ import { Section } from "../components/Section";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 import { Pill } from "../components/Pill";
 import { useState } from "react";
-
-enum Work {
-  Slide = 1,
-  Squads,
-  Accounting,
-}
+import { Work } from "../constants";
+import { FeaturedWork } from "../components/FeaturedWork";
 
 export default function Home() {
   // equivalent to 'lg' breakpoint in Tailwind
@@ -39,6 +35,8 @@ export default function Home() {
                   alt="Evan Doyle Headshot"
                   className="rounded-lg"
                   layout="responsive"
+                  placeholder="blur"
+                  priority
                   src={Headshot}
                 />
               </div>
@@ -63,8 +61,8 @@ export default function Home() {
             </div>
           </div>
         </Section>
-        <Section height="h-[800px] lg:h-[600px]">
-          <div className="flex flex-col justify-start items-center h-full">
+        <Section height="lg:h-[600px]">
+          <div className="flex flex-col justify-start items-center h-full px-8">
             <div className="flex justify-start items-center h-24 w-5/6 sm:max-w-[1100px] pb-8">
               <div>
                 <h2 className="text-3xl sm:text-4xl font-semibold">
@@ -73,11 +71,13 @@ export default function Home() {
                 <hr className="border-2 border-dashed border-smoke" />
               </div>
             </div>
-            <div className="flex flex-wrap-reverse gap-6 lg:gap-2 justify-center lg:justify-between items-center w-full max-w-[925px]">
+            <div className="flex flex-wrap-reverse gap-6 lg:gap-2 justify-center lg:justify-between items-center w-full max-w-[1200px] h-full">
               <div className="flex flex-col lg:w-1/2 justify-center items-center gap-2">
                 <div
                   className={`w-full lg:max-w-[500px] p-4 rounded-lg border border-smoke bg-offwhite hover:scale-105 active:scale-100 cursor-pointer ${
-                    selectedWork == Work.Slide ? "scale-105 shadow-xl" : ""
+                    selectedWork == Work.Slide
+                      ? "scale-105 shadow-xl border-2"
+                      : ""
                   }`}
                   onClick={() => setSelectedWork(Work.Slide)}
                 >
@@ -99,7 +99,9 @@ export default function Home() {
                 </div>
                 <div
                   className={`w-full lg:max-w-[500px] p-4 rounded-lg border border-smoke bg-offwhite hover:scale-105 active:scale-100 cursor-pointer ${
-                    selectedWork == Work.Squads ? "scale-105 shadow-xl" : ""
+                    selectedWork == Work.Squads
+                      ? "scale-105 shadow-xl border-2"
+                      : ""
                   }`}
                   onClick={() => setSelectedWork(Work.Squads)}
                 >
@@ -107,7 +109,9 @@ export default function Home() {
                     <div className="w-full flex justify-between items-center gap-4">
                       <p className="text-lg sm:text-xl">🛠 Squads SDK</p>
                       <div className="flex justify-between items-center gap-2">
-                        <Pill colors="border-ocean text-ocean">Typescript</Pill>
+                        <Pill colors="border-brightblue text-brightblue">
+                          Typescript
+                        </Pill>
                         <Pill colors="border-royal text-royal">Solana</Pill>
                       </div>
                     </div>
@@ -121,7 +125,9 @@ export default function Home() {
                 </div>
                 <div
                   className={`w-full lg:max-w-[500px] p-4 rounded-lg border border-smoke bg-offwhite hover:scale-105 active:scale-100 cursor-pointer ${
-                    selectedWork == Work.Accounting ? "scale-105 shadow-xl" : ""
+                    selectedWork == Work.Accounting
+                      ? "scale-105 shadow-xl border-2"
+                      : ""
                   }`}
                   onClick={() => setSelectedWork(Work.Accounting)}
                 >
@@ -132,7 +138,9 @@ export default function Home() {
                       </p>
                       <div className="flex justify-between items-center gap-2">
                         <Pill colors="border-ocean text-ocean">React</Pill>
-                        <Pill colors="border-snake text-snake">Django</Pill>
+                        <Pill colors="border-darksnake text-darksnake">
+                          Django
+                        </Pill>
                       </div>
                     </div>
                     {wideScreen && (
@@ -144,12 +152,9 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-
-              {/* at sm-lg breakpoint range, ~145px added to width, past lg ~30px */}
-              {/* this means fixed left/right can appear as ~70px width when sm-lg */}
-              {/* once below sm breakpoint, needs to be transparent overlap */}
-              {/* once above lg breakpoint, side selectors show up and we have some additional space for text size */}
-              <div className="h-96 w-96 sm:w-[525px] lg:w-[410px] border border-smoke rounded-lg" />
+              <div className="w-full lg:w-[45%]">
+                <FeaturedWork work={selectedWork} />
+              </div>
             </div>
           </div>
         </Section>
