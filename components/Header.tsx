@@ -14,7 +14,12 @@ export const Header = () => {
       <div className="flex flex-row justify-center items-center gap-2">
         {wideScreen ? (
           <>
-            <p className="text-2xl border-r-2 border-white pr-4 py-1">Blog</p>
+            <a
+              className="text-2xl border-r-2 border-white pr-4 py-1"
+              href="https://blog.0x63problems.dev"
+            >
+              Blog
+            </a>
             <div className="pl-2">
               <Github />
             </div>
