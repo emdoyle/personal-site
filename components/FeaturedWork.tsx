@@ -63,9 +63,11 @@ export const FeaturedWork: React.FC<Props> = ({ work }) => {
   return (
     <div className="flex flex-col gap-4 justify-between items-center">
       <div className="w-full rounded-lg border border-smoke shadow-[0px_0px_8px_10px_rgba(112,112,112,.25)]">
+        {/* key is REQUIRED for the placeholder effect to show when 'src' changes */}
         <Image
+          key={imageInfo.src.src}
           alt={imageInfo.alt}
-          className={`rounded-lg cursor-pointer ${imageInfo.className}`}
+          className={`rounded-lg ${imageInfo.className}`}
           layout="responsive"
           placeholder="blur"
           src={imageInfo.src}
