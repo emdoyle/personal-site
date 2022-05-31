@@ -158,7 +158,7 @@ export default function Home() {
             </div>
           </div>
         </Section>
-        <Section height="h-[1000px] lg:h-[600px]">
+        <Section height="h-[1200px] xl:h-[600px]">
           <div className="flex flex-col justify-start items-center h-full">
             <div className="flex justify-end items-center h-24 w-5/6 lg:max-w-[1100px] pb-8">
               <div>
@@ -166,26 +166,54 @@ export default function Home() {
                 <hr className="border-2 border-dashed border-smoke" />
               </div>
             </div>
-            <div className="h-full flex flex-col lg:flex-row justify-between items-center w-5/6 lg:max-w-[1200px]">
-              <div className="flex flex-col justify-center items-center gap-4 rounded-lg bg-offwhite border border-smoke p-8 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-64 lg:h-80 w-2/3 lg:w-[30%]">
-                <div className="w-40 h-32 border-2 border-smoke rounded" />
-                <div className="h-1/4 text-center flex flex-col justify-center items-center pt-4">
-                  <h1 className="text-xl lg:text-2xl">Web App Development</h1>
+            <div className="h-full flex flex-col xl:flex-row justify-between items-center w-5/6 xl:max-w-[1200px] text-smoke">
+              <div className="flex flex-col justify-center items-center gap-2 rounded-xl bg-offwhite border border-smoke p-6 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-80 w-2/3 xl:w-[30%] max-w-[500px]">
+                <div className="h-1/3 sm:h-1/4 flex flex-col justify-center items-center">
+                  <h1 className="font-semibold text-center text-2xl pb-2">
+                    Web App Development
+                  </h1>
                 </div>
+                <hr className="w-full margin-0 border-smoke" />
+                <ul
+                  role="list"
+                  className="text-center pt-2 pl-2 text-lg sm:text-xl marker:text-3xl"
+                >
+                  <li className="list-['⚡️'] pl-2 pb-2">Performant APIs</li>
+                  <li className="list-['☯️'] pl-2 pb-2">Smooth UI</li>
+                  <li className="list-['🚀'] pl-2 pb-2">Scalable Hosting</li>
+                </ul>
               </div>
-              <div className="flex flex-col justify-center items-center gap-4 rounded-lg bg-offwhite border border-smoke p-8 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-64 lg:h-80 w-2/3 lg:w-[30%]">
-                <div className="w-40 h-32 border-2 border-smoke rounded" />
-                <div className="h-1/4 text-center flex flex-col justify-center items-center pt-4">
-                  <h1 className="text-xl lg:text-2xl">MVP Prototyping</h1>
+              <div className="flex flex-col justify-center items-center gap-2 rounded-xl bg-offwhite border border-smoke p-6 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-80 w-2/3 xl:w-[30%] max-w-[500px]">
+                <div className="h-1/3 sm:h-1/4 flex flex-col justify-center items-center">
+                  <h1 className="font-semibold text-center text-2xl pb-2">
+                    MVP Prototyping
+                  </h1>
                 </div>
+                <hr className="w-full margin-0 border-smoke" />
+                <ul
+                  role="list"
+                  className="text-center pt-2 pl-2 text-lg sm:text-xl marker:text-3xl"
+                >
+                  <li className="list-['📦️'] pl-2 pb-2">Quick Delivery</li>
+                  <li className="list-['🔍️'] pl-2 pb-2">Built-in Analytics</li>
+                  <li className="list-['🔁'] pl-2 pb-2">Easy Iteration</li>
+                </ul>
               </div>
-              <div className="flex flex-col justify-center items-center gap-4 rounded-lg bg-offwhite border border-smoke p-8 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-64 lg:h-80 w-2/3 lg:w-[30%]">
-                <div className="w-40 h-32 border-2 border-smoke rounded" />
-                <div className="h-1/4 text-center flex flex-col justify-center items-center pt-4">
-                  <h1 className="text-xl lg:text-2xl">
+              <div className="flex flex-col justify-center items-center gap-2 rounded-xl bg-offwhite border border-smoke p-6 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-80 w-2/3 xl:w-[30%] max-w-[500px]">
+                <div className="h-1/3 sm:h-1/4 flex flex-col justify-center items-center">
+                  <h1 className="font-semibold text-center text-2xl pb-2">
                     Blockchain Program Development
                   </h1>
                 </div>
+                <hr className="w-full margin-0 border-smoke" />
+                <ul
+                  role="list"
+                  className="text-center pt-2 pl-2 text-lg sm:text-xl marker:text-3xl"
+                >
+                  <li className="list-['🔒'] pl-2 pb-2">Secure Programs</li>
+                  <li className="list-['🧱'] pl-2 pb-2">Composable Design</li>
+                  <li className="list-['🦾'] pl-2 pb-2">Robust Client</li>
+                </ul>
               </div>
             </div>
           </div>
