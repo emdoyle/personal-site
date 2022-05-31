@@ -17,16 +17,25 @@ export default function Home() {
   const wideScreen = useMediaQuery("(min-width: 1024px)");
 
   const [selectedWork, setSelectedWork] = useState<Work>(Work.Slide);
+  const [overlayMenuOpen, setOverlayMenuOpen] = useState<boolean>(false);
 
   return (
-    <Container>
+    <Container className={overlayMenuOpen ? "h-screen" : ""}>
       <Head>
         <title>Evan Doyle</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
-      <Content>
+      <Header
+        menuIsOpen={overlayMenuOpen}
+        openMenu={() => setOverlayMenuOpen(true)}
+        closeMenu={() => setOverlayMenuOpen(false)}
+      />
+      <Content
+        className={
+          overlayMenuOpen ? "h-[calc(100vh-4rem)] overflow-hidden" : ""
+        }
+      >
         <Section>
           <div className="flex flex-col justify-center items-center h-full">
             <div className="flex flex-col sm:flex-row gap-4 justify-between items-center w-5/6 sm:max-w-[900px]">
@@ -275,7 +284,7 @@ export default function Home() {
           </form>
         </Section>
       </Content>
-      <Footer />
+      <Footer className={overlayMenuOpen ? "hidden" : ""} />
     </Container>
   );
 }

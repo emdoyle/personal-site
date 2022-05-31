@@ -1,9 +1,10 @@
 import React from "react";
 
-export const Content: React.FC<{ children?: React.ReactNode }> = ({
-  children,
-}) => {
+export const Content: React.FC<{
+  className?: string;
+  children?: React.ReactNode;
+}> = ({ className = "", children }) => {
   return (
-    <div className="grow min-w-full min-h-full flex flex-col">{children}</div>
+    <div className={`min-w-full flex flex-col ${className}`}>{children}</div>
   );
 };
