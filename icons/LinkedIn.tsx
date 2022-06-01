@@ -1,9 +1,14 @@
-export const LinkedIn = () => {
+import React from "react";
+
+export const LinkedIn: React.FC<{ width?: number; height?: number }> = ({
+  width = 30,
+  height = 30,
+}) => {
   return (
     <a href="https://www.linkedin.com/in/evan-doyle-060b0ab9/">
       <svg
-        width="30"
-        height="30"
+        width={`${width}`}
+        height={`${height}`}
         viewBox="0 0 30 30"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

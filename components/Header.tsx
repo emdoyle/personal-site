@@ -4,6 +4,7 @@ import { Github } from "../icons/Github";
 import { Twitter } from "../icons/Twitter";
 import { LinkedIn } from "../icons/LinkedIn";
 import { Burger } from "../icons/Burger";
+import { BlogIcon } from "../icons/BlogIcon";
 
 type Props = {
   menuIsOpen: boolean;
@@ -67,9 +68,38 @@ export const Header: React.FC<Props> = ({
               }
             }}
           >
-            <div className="w-5/6 max-w-[550px] h-16 bg-offwhite/100 flex flex-row justify-center items-center">
-              Hello, world
-            </div>
+            <h1 className="w-5/6 max-w-[550px] h-12 text-3xl text-white">
+              Evan Doyle
+            </h1>
+            <hr className="w-5/6 max-w-[550px] border-white pb-8" />
+            <a
+              href="https://blog.0x63problems.dev"
+              className="w-5/6 max-w-[550px] h-16 bg-offwhite/40 flex flex-row justify-start items-center px-4 mb-6 rounded-xl text-white cursor-pointer hover:text-smoke hover:scale-105"
+            >
+              <BlogIcon width={40} height={40} />
+              <span className="pl-6 text-3xl underline">&gt; Blog</span>
+            </a>
+            <a
+              href="https://github.com/emdoyle"
+              className="w-5/6 max-w-[550px] h-16 bg-offwhite/40 flex flex-row justify-start items-center px-4 mb-6 rounded-xl text-white cursor-pointer hover:text-smoke hover:scale-105"
+            >
+              <Github width={40} height={40} />
+              <span className="pl-6 text-3xl underline">&gt; Github</span>
+            </a>
+            <a
+              href="https://twitter.com/evandoyleDEV"
+              className="w-5/6 max-w-[550px] h-16 bg-offwhite/40 flex flex-row justify-start items-center px-4 mb-6 rounded-xl text-white cursor-pointer hover:text-smoke hover:scale-105"
+            >
+              <Twitter width={40} height={40} />
+              <span className="pl-6 text-3xl underline">&gt; Twitter</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/evan-doyle-060b0ab9/"
+              className="w-5/6 max-w-[550px] h-16 bg-offwhite/40 flex flex-row justify-start items-center px-4 mb-6 rounded-xl text-white cursor-pointer hover:text-smoke hover:scale-105"
+            >
+              <LinkedIn width={40} height={40} />
+              <span className="pl-6 text-3xl underline">&gt; LinkedIn</span>
+            </a>
           </div>
         </>
       )}
