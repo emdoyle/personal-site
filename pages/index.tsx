@@ -247,6 +247,7 @@ export default function Home() {
                   id="name-input"
                   name="name"
                   type="text"
+                  autoComplete="off"
                   required
                   className="h-10 w-1/3 min-w-[220px] p-2 rounded border border-smoke"
                   placeholder="Name"
@@ -258,6 +259,7 @@ export default function Home() {
                   id="email-input"
                   name="email"
                   type="text"
+                  autoComplete="off"
                   required
                   className="h-10 grow min-w-[300px] p-2 rounded border border-smoke"
                   placeholder="Email"
