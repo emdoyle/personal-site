@@ -6,16 +6,12 @@ import { Header } from "../components/Header";
 import { Content } from "../components/Content";
 import { Footer } from "../components/Footer";
 import { Section } from "../components/Section";
-import { useMediaQuery } from "../hooks/useMediaQuery";
 import { Pill } from "../components/Pill";
 import { useState } from "react";
 import { Work } from "../constants";
 import { FeaturedWork } from "../components/FeaturedWork";
 
 export default function Home() {
-  // equivalent to 'lg' breakpoint in Tailwind
-  const wideScreen = useMediaQuery("(min-width: 1024px)");
-
   const [selectedWork, setSelectedWork] = useState<Work>(Work.Slide);
   const [overlayMenuOpen, setOverlayMenuOpen] = useState<boolean>(false);
 
@@ -99,11 +95,9 @@ export default function Home() {
                         <Pill colors="border-royal text-royal">Solana</Pill>
                       </div>
                     </div>
-                    {wideScreen && (
-                      <p>
-                        Expense Management for DAOs. 2nd Place Riptide Winner.
-                      </p>
-                    )}
+                    <p className="max-w-[600px]">
+                      Expense Management for DAOs. 2nd Place Riptide Winner.
+                    </p>
                   </div>
                 </div>
                 <div
@@ -124,12 +118,10 @@ export default function Home() {
                         <Pill colors="border-royal text-royal">Solana</Pill>
                       </div>
                     </div>
-                    {wideScreen && (
-                      <p>
-                        Typescript SDK for the Squads platform. Published to NPM
-                        (@sqds/squads)
-                      </p>
-                    )}
+                    <p className="max-w-[600px]">
+                      Typescript SDK for the Squads platform. Published to NPM
+                      (@sqds/squads)
+                    </p>
                   </div>
                 </div>
                 <div
@@ -152,16 +144,14 @@ export default function Home() {
                         </Pill>
                       </div>
                     </div>
-                    {wideScreen && (
-                      <p>
-                        Custom connection flows, automatic data syncs, and
-                        connection status alerting for QBO/Xero.
-                      </p>
-                    )}
+                    <p className="max-w-[600px]">
+                      Custom connection flows, automatic data syncs, and
+                      connection status alerting for QBO/Xero.
+                    </p>
                   </div>
                 </div>
               </div>
-              <div className="w-full lg:w-[45%]">
+              <div className="w-full max-w-[750px] lg:w-[45%]">
                 <FeaturedWork work={selectedWork} />
               </div>
             </div>
