@@ -1,3 +1,4 @@
+import React, { useRef } from "react";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 import { Github } from "../icons/Github";
 import { Twitter } from "../icons/Twitter";
@@ -17,6 +18,8 @@ export const Header: React.FC<Props> = ({
 }) => {
   // equivalent to 'sm' breakpoint in Tailwind
   const wideScreen = useMediaQuery("(min-width: 680px)");
+  const overlayRef = useRef(null);
+  const menuContainerRef = useRef(null);
 
   return (
     <>
@@ -45,12 +48,30 @@ export const Header: React.FC<Props> = ({
         </div>
       </header>
       {menuIsOpen && (
-        <div
-          className="fixed h-screen w-screen bg-smoke opacity-95 overflow-y-hidden z-10"
-          onClick={closeMenu}
-        >
-          Hello, World!
-        </div>
+        <>
+          <div
+            className="fixed h-screen w-screen bg-smoke opacity-95 overflow-y-hidden z-10"
+            ref={overlayRef}
+            onClick={(event) => {
+              if (event.target === overlayRef.current) {
+                closeMenu();
+              }
+            }}
+          />
+          <div
+            className="h-screen w-screen flex flex-col justify-start items-center absolute top-0 pt-4 z-20"
+            ref={menuContainerRef}
+            onClick={(event) => {
+              if (event.target === menuContainerRef.current) {
+                closeMenu();
+              }
+            }}
+          >
+            <div className="w-5/6 max-w-[550px] h-16 bg-offwhite/100 flex flex-row justify-center items-center">
+              Hello, world
+            </div>
+          </div>
+        </>
       )}
     </>
   );
