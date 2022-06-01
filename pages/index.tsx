@@ -55,10 +55,10 @@ export default function Home() {
                   applications.
                 </p>
                 <div className="flex justify-start items-center gap-6 md:gap-8 sm:text-lg md:text-xl lg:text-2xl">
-                  <a href="#" className="hover:text-ash">
+                  <a href="#hire-me" className="hover:text-ash">
                     <span className="underline">Hire me</span> &gt;
                   </a>
-                  <a href="#" className="hover:text-ash">
+                  <a href="#services" className="hover:text-ash">
                     <span className="underline">View services</span> &gt;
                   </a>
                 </div>
@@ -70,7 +70,10 @@ export default function Home() {
           <div className="flex flex-col justify-start items-center h-full px-8">
             <div className="flex justify-start items-center h-24 w-5/6 sm:max-w-[1100px] pb-8">
               <div>
-                <h2 className="text-3xl sm:text-4xl font-semibold">
+                <h2
+                  id="featured-work"
+                  className="text-3xl sm:text-4xl font-semibold"
+                >
                   Featured Work
                 </h2>
                 <hr className="border-2 border-dashed border-smoke" />
@@ -161,7 +164,12 @@ export default function Home() {
           <div className="flex flex-col justify-start items-center h-full">
             <div className="flex justify-end items-center h-24 w-5/6 lg:max-w-[1100px] pb-8">
               <div>
-                <h2 className="text-3xl sm:text-4xl font-semibold">Services</h2>
+                <h2
+                  id="services"
+                  className="text-3xl sm:text-4xl font-semibold"
+                >
+                  Services
+                </h2>
                 <hr className="border-2 border-dashed border-smoke" />
               </div>
             </div>
@@ -221,7 +229,9 @@ export default function Home() {
           <form className="flex flex-col justify-start items-center h-full">
             <div className="flex justify-center items-center h-24">
               <div>
-                <h2 className="text-3xl sm:text-4xl font-semibold">Hire Me</h2>
+                <h2 id="hire-me" className="text-3xl sm:text-4xl font-semibold">
+                  Hire Me
+                </h2>
                 <hr className="border-2 border-dashed border-smoke" />
               </div>
             </div>
