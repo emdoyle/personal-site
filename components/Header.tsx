@@ -68,10 +68,13 @@ export const Header: React.FC<Props> = ({
               }
             }}
           >
-            <h1 className="w-5/6 max-w-[550px] h-12 text-3xl text-white">
+            <h1
+              onClick={closeMenu}
+              className="cursor-default w-5/6 max-w-[550px] h-12 text-3xl text-white"
+            >
               Evan Doyle
             </h1>
-            <hr className="w-5/6 max-w-[550px] border-white pb-8" />
+            <hr className="w-5/6 max-w-[550px] border-white mb-8" />
             <a
               href="https://blog.0x63problems.dev"
               className="w-5/6 max-w-[550px] h-16 bg-offwhite/40 flex flex-row justify-start items-center px-4 mb-6 rounded-xl text-white cursor-pointer hover:text-smoke hover:scale-105"
