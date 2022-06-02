@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { supabase } from "../utils/supabaseClient";
+import { Id, toast } from "react-toastify";
 import Headshot from "../public/headshot.webp";
 import { Container } from "../components/Container";
 import { Header } from "../components/Header";
@@ -8,7 +9,7 @@ import { Content } from "../components/Content";
 import { Footer } from "../components/Footer";
 import { Section } from "../components/Section";
 import { Pill } from "../components/Pill";
-import { BaseSyntheticEvent, useState } from "react";
+import { BaseSyntheticEvent, useRef, useState } from "react";
 import { Work } from "../constants";
 import { FeaturedWork } from "../components/FeaturedWork";
 
@@ -19,36 +20,70 @@ interface HTMLFormEvent
     HTMLFormElement
   > {}
 
-const handleEmailFormSubmit = async (event: HTMLFormEvent) => {
-  event.preventDefault();
-  const elements = event.target.elements;
-  const name = elements.namedItem("name");
-  const email = elements.namedItem("email");
-  const message = elements.namedItem("project");
-  if (
-    name instanceof HTMLInputElement &&
-    email instanceof HTMLInputElement &&
-    message instanceof HTMLTextAreaElement
-  ) {
-    const { error } = await supabase
-      .from("Inquiry")
-      .insert([
-        { name: name.value, email: email.value, message: message.value },
-      ]);
-    if (error) {
-      alert(error.message);
-    } else {
-      alert("Success!");
-    }
-  } else {
-    alert("An unexpected error occurred.");
-  }
-  return false;
-};
-
 export default function Home() {
   const [selectedWork, setSelectedWork] = useState<Work>(Work.Slide);
   const [overlayMenuOpen, setOverlayMenuOpen] = useState<boolean>(false);
+  const submittingToastId = useRef<Id | null>(null);
+
+  // Would normally use onClose but as of React 18's strict mode changes,
+  // this causes strange behavior in development.
+  // See: https://github.com/fkhadra/react-toastify/issues/741
+  toast.onChange((toastItem) => {
+    if (
+      toastItem.status === "removed" &&
+      toastItem.id === submittingToastId.current
+    ) {
+      submittingToastId.current = null;
+    }
+  });
+
+  const handleEmailFormSubmit = async (event: HTMLFormEvent) => {
+    event.preventDefault();
+    const elements = event.target.elements;
+    const name = elements.namedItem("name");
+    const email = elements.namedItem("email");
+    const message = elements.namedItem("project");
+    submittingToastId.current = toast.loading("Submitting...", {
+      autoClose: false,
+    });
+    if (
+      name instanceof HTMLInputElement &&
+      email instanceof HTMLInputElement &&
+      message instanceof HTMLTextAreaElement
+    ) {
+      const { error } = await supabase
+        .from("Inquiry")
+        .insert([
+          { name: name.value, email: email.value, message: message.value },
+        ]);
+      if (error) {
+        toast.update(submittingToastId.current, {
+          render: `❗️ ${error.message ?? "An unexpected error occurred."}`,
+          type: toast.TYPE.ERROR,
+          isLoading: false,
+          autoClose: 2500,
+          delay: 100,
+        });
+      } else {
+        toast.update(submittingToastId.current, {
+          render: "✅ Message received",
+          type: toast.TYPE.SUCCESS,
+          isLoading: false,
+          autoClose: 2500,
+          delay: 100,
+        });
+      }
+    } else {
+      toast.update(submittingToastId.current, {
+        render: "❗️ An unexpected error occurred",
+        type: toast.TYPE.ERROR,
+        isLoading: false,
+        autoClose: 4000,
+        delay: 100,
+      });
+    }
+    return false;
+  };
 
   return (
     <Container className={overlayMenuOpen ? "h-screen" : ""}>
