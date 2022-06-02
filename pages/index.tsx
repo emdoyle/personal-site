@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { supabase } from "../utils/supabaseClient";
 import Headshot from "../public/headshot.webp";
 import { Container } from "../components/Container";
 import { Header } from "../components/Header";
@@ -7,9 +8,43 @@ import { Content } from "../components/Content";
 import { Footer } from "../components/Footer";
 import { Section } from "../components/Section";
 import { Pill } from "../components/Pill";
-import { useState } from "react";
+import { BaseSyntheticEvent, useState } from "react";
 import { Work } from "../constants";
 import { FeaturedWork } from "../components/FeaturedWork";
+
+interface HTMLFormEvent
+  extends BaseSyntheticEvent<
+    Event,
+    EventTarget & HTMLFormElement,
+    HTMLFormElement
+  > {}
+
+const handleEmailFormSubmit = async (event: HTMLFormEvent) => {
+  event.preventDefault();
+  const elements = event.target.elements;
+  const name = elements.namedItem("name");
+  const email = elements.namedItem("email");
+  const message = elements.namedItem("project");
+  if (
+    name instanceof HTMLInputElement &&
+    email instanceof HTMLInputElement &&
+    message instanceof HTMLTextAreaElement
+  ) {
+    const { error } = await supabase
+      .from("Inquiry")
+      .insert([
+        { name: name.value, email: email.value, message: message.value },
+      ]);
+    if (error) {
+      alert(error.message);
+    } else {
+      alert("Success!");
+    }
+  } else {
+    alert("An unexpected error occurred.");
+  }
+  return false;
+};
 
 export default function Home() {
   const [selectedWork, setSelectedWork] = useState<Work>(Work.Slide);
@@ -226,7 +261,10 @@ export default function Home() {
           </div>
         </Section>
         <Section height="h-[600px]">
-          <form className="flex flex-col justify-start items-center h-full">
+          <form
+            onSubmit={handleEmailFormSubmit}
+            className="flex flex-col justify-start items-center h-full"
+          >
             <div className="flex justify-center items-center h-24">
               <div>
                 <h2 id="hire-me" className="text-3xl sm:text-4xl font-semibold">
@@ -258,7 +296,7 @@ export default function Home() {
                 <input
                   id="email-input"
                   name="email"
-                  type="text"
+                  type="email"
                   autoComplete="off"
                   required
                   className="h-10 grow min-w-[300px] p-2 rounded border border-smoke"
