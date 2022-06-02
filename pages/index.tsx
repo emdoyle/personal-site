@@ -244,7 +244,7 @@ export default function Home() {
               </div>
             </div>
             <div className="h-full flex flex-col xl:flex-row justify-between items-center w-5/6 xl:max-w-[1200px] text-smoke">
-              <div className="flex flex-col justify-center items-center gap-2 rounded-xl bg-offwhite border border-smoke p-6 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-80 w-2/3 xl:w-[30%] max-w-[500px]">
+              <div className="flex flex-col justify-center items-center gap-2 rounded-xl bg-offwhite border border-smoke p-6 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-72 xs:h-80 w-2/3 xl:w-[30%] max-w-[500px]">
                 <div className="h-1/3 sm:h-1/4 flex flex-col justify-center items-center">
                   <h1 className="font-semibold text-center text-2xl pb-2">
                     Web App Development
@@ -253,14 +253,14 @@ export default function Home() {
                 <hr className="w-full margin-0 border-smoke" />
                 <ul
                   role="list"
-                  className="text-center pt-2 pl-2 text-lg sm:text-xl marker:text-3xl"
+                  className="text-center pt-2 pl-2 xs:text-lg sm:text-xl xs:marker:text-xl sm:marker:text-3xl"
                 >
                   <li className="list-['⚡️'] pl-2 pb-2">Performant APIs</li>
                   <li className="list-['☯️'] pl-2 pb-2">Smooth UI</li>
                   <li className="list-['🚀'] pl-2 pb-2">Scalable Hosting</li>
                 </ul>
               </div>
-              <div className="flex flex-col justify-center items-center gap-2 rounded-xl bg-offwhite border border-smoke p-6 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-80 w-2/3 xl:w-[30%] max-w-[500px]">
+              <div className="flex flex-col justify-center items-center gap-2 rounded-xl bg-offwhite border border-smoke p-6 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-72 xs:h-80 w-2/3 xl:w-[30%] max-w-[500px]">
                 <div className="h-1/3 sm:h-1/4 flex flex-col justify-center items-center">
                   <h1 className="font-semibold text-center text-2xl pb-2">
                     MVP Prototyping
@@ -269,14 +269,14 @@ export default function Home() {
                 <hr className="w-full margin-0 border-smoke" />
                 <ul
                   role="list"
-                  className="text-center pt-2 pl-2 text-lg sm:text-xl marker:text-3xl"
+                  className="text-center pt-2 pl-2 xs:text-lg sm:text-xl xs:marker:text-xl sm:marker:text-3xl"
                 >
                   <li className="list-['📦️'] pl-2 pb-2">Quick Delivery</li>
                   <li className="list-['🔍️'] pl-2 pb-2">Built-in Analytics</li>
                   <li className="list-['🔁'] pl-2 pb-2">Easy Iteration</li>
                 </ul>
               </div>
-              <div className="flex flex-col justify-center items-center gap-2 rounded-xl bg-offwhite border border-smoke p-6 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-80 w-2/3 xl:w-[30%] max-w-[500px]">
+              <div className="flex flex-col justify-center items-center gap-2 rounded-xl bg-offwhite border border-smoke p-6 shadow-[0px_0px_2px_6px_rgba(176,178,184,.25)] h-72 xs:h-80 w-2/3 xl:w-[30%] max-w-[500px]">
                 <div className="h-1/3 sm:h-1/4 flex flex-col justify-center items-center">
                   <h1 className="font-semibold text-center text-2xl pb-2">
                     Blockchain Program Development
@@ -285,7 +285,7 @@ export default function Home() {
                 <hr className="w-full margin-0 border-smoke" />
                 <ul
                   role="list"
-                  className="text-center pt-2 pl-2 text-lg sm:text-xl marker:text-3xl"
+                  className="text-center pt-2 pl-2 xs:text-lg sm:text-xl xs:marker:text-xl sm:marker:text-3xl"
                 >
                   <li className="list-['🔒'] pl-2 pb-2">Secure Programs</li>
                   <li className="list-['🧱'] pl-2 pb-2">Composable Design</li>
