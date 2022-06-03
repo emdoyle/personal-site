@@ -24,28 +24,30 @@ export const Header: React.FC<Props> = ({
 
   return (
     <>
-      <header className="h-16 sm:h-24 w-full flex flex-row justify-between items-center px-4 sm:px-8 bg-smoke text-offwhite">
-        <p className="cursor-default text-2xl sm:text-4xl">Evan Doyle</p>
-        <div className="flex flex-row justify-center items-center gap-2">
-          {wideScreen ? (
-            <>
-              <a
-                className="text-2xl border-r-2 border-white pr-4 py-1"
-                href="https://blog.0x63problems.dev"
-              >
-                Blog
-              </a>
-              <div className="pl-2">
-                <Github />
+      <header className="flex justify-center items-center h-16 sm:h-24 w-full px-4 sm:px-8 bg-smoke text-offwhite">
+        <div className="max-w-[1400px] w-full flex flex-row justify-between items-center">
+          <p className="cursor-default text-2xl sm:text-4xl">Evan Doyle</p>
+          <div className="flex flex-row justify-center items-center gap-2">
+            {wideScreen ? (
+              <>
+                <a
+                  className="text-2xl border-r-2 border-white pr-4 py-1"
+                  href="https://blog.0x63problems.dev"
+                >
+                  Blog
+                </a>
+                <div className="pl-2">
+                  <Github />
+                </div>
+                <Twitter />
+                <LinkedIn />
+              </>
+            ) : (
+              <div className="cursor-pointer" onClick={openMenu}>
+                <Burger />
               </div>
-              <Twitter />
-              <LinkedIn />
-            </>
-          ) : (
-            <div className="cursor-pointer" onClick={openMenu}>
-              <Burger />
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </header>
       {menuIsOpen && (
