@@ -12,6 +12,7 @@ import { Pill } from "../components/Pill";
 import { BaseSyntheticEvent, useRef, useState } from "react";
 import { Work } from "../constants";
 import { FeaturedWork } from "../components/FeaturedWork";
+import { MetaTags } from "../components/MetaTags";
 
 interface HTMLFormEvent
   extends BaseSyntheticEvent<
@@ -88,8 +89,9 @@ export default function Home() {
   return (
     <Container className={overlayMenuOpen ? "h-screen" : ""}>
       <Head>
-        <title>Evan Doyle</title>
+        <title>Evan Doyle | Web Developer</title>
         <link rel="icon" href="/favicon.ico" />
+        <MetaTags />
       </Head>
 
       <Header
