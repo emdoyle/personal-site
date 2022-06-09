@@ -3,6 +3,7 @@ import Image from "next/image";
 import { supabase } from "../utils/supabaseClient";
 import { Id, toast } from "react-toastify";
 import Headshot from "../public/headshot.webp";
+import KevinHeadshot from "../public/kevin_headshot.webp";
 import { Container } from "../components/Container";
 import { Header } from "../components/Header";
 import { Content } from "../components/Content";
@@ -10,9 +11,10 @@ import { Footer } from "../components/Footer";
 import { Section } from "../components/Section";
 import { Pill } from "../components/Pill";
 import { BaseSyntheticEvent, useRef, useState } from "react";
-import { Work } from "../constants";
+import { KEVIN_TESTIMONIAL, Work } from "../constants";
 import { FeaturedWork } from "../components/FeaturedWork";
 import { MetaTags } from "../components/MetaTags";
+import { Testimonial } from "../components/Testimonial";
 
 interface HTMLFormEvent
   extends BaseSyntheticEvent<
@@ -104,7 +106,7 @@ export default function Home() {
           overlayMenuOpen ? "h-[calc(100vh-4rem)] overflow-hidden" : ""
         }
       >
-        <Section>
+        <Section className="h-96">
           <div className="flex flex-col justify-center items-center h-full">
             <div className="flex flex-col sm:flex-row gap-4 justify-between items-center w-5/6 sm:max-w-[900px]">
               <div className="w-32 sm:w-52 rounded-lg border border-smoke shadow-[0px_0px_8px_10px_rgba(112,112,112,.25)]">
@@ -138,7 +140,7 @@ export default function Home() {
             </div>
           </div>
         </Section>
-        <Section height="lg:h-[600px]">
+        <Section className="lg:h-[600px]">
           <div className="flex flex-col justify-start items-center h-full px-8">
             <div className="flex justify-start items-center h-24 w-5/6 sm:max-w-[1100px] pb-8">
               <div>
@@ -232,7 +234,7 @@ export default function Home() {
             </div>
           </div>
         </Section>
-        <Section height="h-[1200px] xl:h-[600px]">
+        <Section className="h-[1200px] xl:h-[600px]">
           <div className="flex flex-col justify-start items-center h-full">
             <div className="flex justify-end items-center h-24 w-5/6 lg:max-w-[1100px] pb-8">
               <div>
@@ -297,7 +299,29 @@ export default function Home() {
             </div>
           </div>
         </Section>
-        <Section height="h-[600px]">
+        <Section className="pb-16 sm:pb-32">
+          <div className="flex flex-col justify-start items-center h-full px-8">
+            <div className="flex justify-start items-center h-24 w-5/6 sm:max-w-[1100px] pb-8">
+              <div>
+                <h2
+                  id="testimonials"
+                  className="text-3xl sm:text-4xl font-semibold"
+                >
+                  Testimonials
+                </h2>
+                <hr className="border-2 border-dashed border-smoke" />
+              </div>
+            </div>
+            <Testimonial
+              text={KEVIN_TESTIMONIAL}
+              author="Kevin Hsu"
+              title="Co-Founder, Product"
+              company="Standard Metrics"
+              image={KevinHeadshot}
+            />
+          </div>
+        </Section>
+        <Section className="h-[600px]">
           <form
             onSubmit={handleEmailFormSubmit}
             className="flex flex-col justify-start items-center h-full"
