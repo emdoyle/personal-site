@@ -26,9 +26,11 @@ export const Testimonial: React.FC<Props> = ({
       className={`relative px-4 pt-4 pb-16 sm:pb-20 min-w-[350px] w-4/5 max-w-[700px] border-2 border-smoke bg-offwhite rounded-xl ${className}`}
     >
       <div
-        className={`absolute ${alignLeft ? "left" : "right"}-[-1rem] sm:${
-          alignLeft ? "left" : "right"
-        }-[-2rem] bottom-[-2rem] sm:bottom-[-4rem] w-20 sm:w-28 rounded-full border-2 border-smoke`}
+        className={`absolute ${
+          alignLeft ? "left-[-1rem]" : "right-[-1rem]"
+        } sm:${
+          alignLeft ? "left-[-2rem]" : "right-[-2rem]"
+        } bottom-[-2rem] sm:bottom-[-4rem] w-20 sm:w-28 rounded-full border-2 border-smoke`}
       >
         <Image
           alt="Testimonial Headshot"
@@ -39,7 +41,11 @@ export const Testimonial: React.FC<Props> = ({
         />
       </div>
       <p className="text-sm sm:text-base md:text-lg">&quot;{text}&quot;</p>
-      <span className={`absolute bottom-2 text-sm sm:text-base md:text-lg`}>
+      <span
+        className={`absolute ${
+          alignLeft ? "right-2" : "left-2"
+        } bottom-2 text-sm sm:text-base md:text-lg`}
+      >
         &mdash; {author}
         <br />
         <span className="text-xs sm:text-sm md:text-base">
