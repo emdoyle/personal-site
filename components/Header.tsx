@@ -5,6 +5,7 @@ import { Twitter } from "../icons/Twitter";
 import { LinkedIn } from "../icons/LinkedIn";
 import { Burger } from "../icons/Burger";
 import { BlogIcon } from "../icons/BlogIcon";
+import Link from "next/link";
 
 type Props = {
   menuIsOpen: boolean;
@@ -26,7 +27,7 @@ export const Header: React.FC<Props> = ({
     <>
       <header className="flex justify-center items-center h-16 sm:h-24 w-full px-4 sm:px-8 bg-smoke text-offwhite">
         <div className="max-w-[1400px] w-full flex flex-row justify-between items-center">
-          <p className="cursor-default text-2xl sm:text-4xl">Evan Doyle</p>
+          <Link href="/"><a className="text-2xl sm:text-4xl">Evan Doyle</a></Link>
           <div className="flex flex-row justify-center items-center gap-2">
             {wideScreen ? (
               <>
