@@ -164,8 +164,10 @@ export default function Home() {
                   onClick={() => setSelectedWork(Work.Prometheus)}
                 >
                   <div className="flex flex-col justify-center items-start gap-2">
-                    <div className="w-full flex justify-between items-center gap-4">
-                      <p className="text-lg sm:text-xl">🤖 Prometheus</p>
+                    <div className="w-full flex flex-wrap justify-between items-center gap-4">
+                      <p className="text-lg sm:text-xl min-w-[150px]">
+                        🤖 Prometheus
+                      </p>
                       <div className="flex justify-between items-center gap-2">
                         <Pill colors="border-ocean text-ocean">React</Pill>
                         <Pill colors="border-brightblue text-brightblue">
@@ -191,7 +193,7 @@ export default function Home() {
                   onClick={() => setSelectedWork(Work.Slide)}
                 >
                   <div className="flex flex-col justify-center items-start gap-2">
-                    <div className="w-full flex justify-between items-center gap-4">
+                    <div className="w-full flex flex-wrap justify-between items-center gap-4">
                       <p className="text-lg sm:text-xl">👾 Slide</p>
                       <div className="flex justify-between items-center gap-2">
                         <Pill colors="border-ocean text-ocean">React</Pill>
@@ -213,7 +215,7 @@ export default function Home() {
                   onClick={() => setSelectedWork(Work.Squads)}
                 >
                   <div className="flex flex-col justify-center items-start gap-2">
-                    <div className="w-full flex justify-between items-center gap-4">
+                    <div className="w-full flex flex-wrap justify-between items-center gap-4">
                       <p className="text-lg sm:text-xl">🛠 Squads SDK</p>
                       <div className="flex justify-between items-center gap-2">
                         <Pill colors="border-brightblue text-brightblue">
