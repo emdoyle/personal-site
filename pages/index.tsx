@@ -24,7 +24,7 @@ interface HTMLFormEvent
   > {}
 
 export default function Home() {
-  const [selectedWork, setSelectedWork] = useState<Work>(Work.Slide);
+  const [selectedWork, setSelectedWork] = useState<Work>(Work.Prometheus);
   const [overlayMenuOpen, setOverlayMenuOpen] = useState<boolean>(false);
   const submittingToastId = useRef<Id | null>(null);
 
@@ -157,6 +157,33 @@ export default function Home() {
               <div className="flex flex-col lg:w-1/2 justify-center items-center gap-2">
                 <div
                   className={`w-full lg:max-w-[500px] p-4 rounded-lg border border-smoke bg-offwhite hover:scale-105 active:scale-100 cursor-pointer ${
+                    selectedWork == Work.Prometheus
+                      ? "scale-105 shadow-xl border-2"
+                      : ""
+                  }`}
+                  onClick={() => setSelectedWork(Work.Prometheus)}
+                >
+                  <div className="flex flex-col justify-center items-start gap-2">
+                    <div className="w-full flex justify-between items-center gap-4">
+                      <p className="text-lg sm:text-xl">🤖 Prometheus</p>
+                      <div className="flex justify-between items-center gap-2">
+                        <Pill colors="border-ocean text-ocean">React</Pill>
+                        <Pill colors="border-brightblue text-brightblue">
+                          Typescript
+                        </Pill>
+                        <Pill colors="border-tangerine text-tangerine">
+                          GCP
+                        </Pill>
+                      </div>
+                    </div>
+                    <p className="max-w-[600px]">
+                      A canvas to build workflows with ML models. Includes GPT-3
+                      and Stable Diffusion APIs.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className={`w-full lg:max-w-[500px] p-4 rounded-lg border border-smoke bg-offwhite hover:scale-105 active:scale-100 cursor-pointer ${
                     selectedWork == Work.Slide
                       ? "scale-105 shadow-xl border-2"
                       : ""
@@ -197,33 +224,7 @@ export default function Home() {
                     </div>
                     <p className="max-w-[600px]">
                       Typescript SDK for the Squads platform. Published to NPM
-                      (@sqds/squads)
-                    </p>
-                  </div>
-                </div>
-                <div
-                  className={`w-full lg:max-w-[500px] p-4 rounded-lg border border-smoke bg-offwhite hover:scale-105 active:scale-100 cursor-pointer ${
-                    selectedWork == Work.Accounting
-                      ? "scale-105 shadow-xl border-2"
-                      : ""
-                  }`}
-                  onClick={() => setSelectedWork(Work.Accounting)}
-                >
-                  <div className="flex flex-col justify-center items-start gap-2">
-                    <div className="w-full flex justify-between items-center gap-4">
-                      <p className="text-lg sm:text-xl">
-                        📊 Accounting Integration
-                      </p>
-                      <div className="flex justify-between items-center gap-2">
-                        <Pill colors="border-ocean text-ocean">React</Pill>
-                        <Pill colors="border-darksnake text-darksnake">
-                          Django
-                        </Pill>
-                      </div>
-                    </div>
-                    <p className="max-w-[600px]">
-                      Custom connection flows, automatic data syncs, and
-                      connection status alerting for QBO/Xero.
+                      (@sqds/sdk)
                     </p>
                   </div>
                 </div>

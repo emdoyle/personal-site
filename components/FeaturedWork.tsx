@@ -1,8 +1,8 @@
 import React from "react";
 import { Work } from "../constants";
 import SlideHome from "../public/slidehome.webp";
-import SquadsSDK from "../public/squads_sdk_figma.webp";
-import AccountingSync from "../public/accounting_sync.webp";
+import SquadsSDK from "../public/squads_sdk.webp";
+import Prometheus from "../public/prometheus.webp";
 import Image, { StaticImageData } from "next/image";
 
 type Props = {
@@ -21,8 +21,8 @@ const IMAGES: Record<Work, ImageInfo> = {
     src: SquadsSDK,
     alt: "Squads Logo alongside a code screenshot and text saying @sqds/squads",
   },
-  [Work.Accounting]: {
-    src: AccountingSync,
+  [Work.Prometheus]: {
+    src: Prometheus,
     alt: "Picture containing QuickBooks and Xero logos with back and forth arrows toward a database",
   },
 };
@@ -50,11 +50,15 @@ const LINKS: Record<Work, LinkInfo[]> = {
     },
   ],
   [Work.Squads]: [
-    // TODO: Update these once SDK work is accepted
-    { link: "https://github.com/emdoyle/sqds", text: "Github" },
-    { link: "https://www.npmjs.com/package/@slidexyz/squads-sdk", text: "NPM" },
+    {
+      link: "https://github.com/Squads-Protocol/squads-mpl/tree/main/sdk",
+      text: "Github",
+    },
+    { link: "https://www.npmjs.com/package/@sqds/sdk", text: "NPM" },
   ],
-  [Work.Accounting]: [],
+  [Work.Prometheus]: [
+    { link: "https://prometheus.llm.llc", text: "Live Site" },
+  ],
 };
 
 export const FeaturedWork: React.FC<Props> = ({ work }) => {

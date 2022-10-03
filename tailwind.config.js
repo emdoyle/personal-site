@@ -18,6 +18,7 @@ module.exports = {
         crab: "#EF6351",
         darksnake: "#4F5D2F",
         snake: "#7FB800",
+        tangerine: "#F38D68",
       },
     },
   },
