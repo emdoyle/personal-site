@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import { supabase } from "../utils/supabaseClient";
+import { storeInquiry } from "../utils/firestore";
 import { Id, toast } from "react-toastify";
 import Headshot from "../public/headshot.webp";
 import KevinHeadshot from "../public/kevin_headshot.webp";
@@ -43,45 +43,35 @@ export default function Home() {
   const handleEmailFormSubmit = async (event: HTMLFormEvent) => {
     event.preventDefault();
     const elements = event.target.elements;
-    const name = elements.namedItem("name");
-    const email = elements.namedItem("email");
-    const message = elements.namedItem("project");
+    const name = elements.namedItem("name") as HTMLInputElement;
+    const email = elements.namedItem("email") as HTMLInputElement;
+    const message = elements.namedItem("project") as HTMLTextAreaElement;
     submittingToastId.current = toast.loading("Submitting...", {
       autoClose: false,
     });
-    if (
-      name instanceof HTMLInputElement &&
-      email instanceof HTMLInputElement &&
-      message instanceof HTMLTextAreaElement
-    ) {
-      const { error } = await supabase
-        .from("Inquiry")
-        .insert([
-          { name: name.value, email: email.value, message: message.value },
-        ]);
-      if (error) {
-        toast.update(submittingToastId.current, {
-          render: `❗️ ${error.message ?? "An unexpected error occurred."}`,
-          type: toast.TYPE.ERROR,
-          isLoading: false,
-          autoClose: 2500,
-          delay: 100,
-        });
-      } else {
-        toast.update(submittingToastId.current, {
-          render: "✅ Message received",
-          type: toast.TYPE.SUCCESS,
-          isLoading: false,
-          autoClose: 2500,
-          delay: 100,
-        });
-      }
-    } else {
+    try {
+      await storeInquiry({
+        name: name.value,
+        email: email.value,
+        message: message.value,
+      });
       toast.update(submittingToastId.current, {
-        render: "❗️ An unexpected error occurred",
+        render: "✅ Message received",
+        type: toast.TYPE.SUCCESS,
+        isLoading: false,
+        autoClose: 2500,
+        delay: 100,
+      });
+    } catch (error: unknown) {
+      toast.update(submittingToastId.current, {
+        render: `❗️ ${
+          error instanceof Error
+            ? error.message
+            : "An unexpected error occurred."
+        }`,
         type: toast.TYPE.ERROR,
         isLoading: false,
-        autoClose: 4000,
+        autoClose: 2500,
         delay: 100,
       });
     }
