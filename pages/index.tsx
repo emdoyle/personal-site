@@ -292,28 +292,29 @@ export default function Home() {
             </div>
           </div>
         </Section>
-        <Section className="pb-16 sm:pb-32">
-          <div className="flex flex-col justify-start items-center h-full px-8">
-            <div className="flex justify-start items-center h-24 w-5/6 sm:max-w-[1100px] pb-8">
-              <div>
-                <h2
-                  id="testimonials"
-                  className="text-3xl sm:text-4xl font-semibold"
-                >
-                  Testimonials
-                </h2>
-                <hr className="border-2 border-dashed border-smoke" />
-              </div>
-            </div>
-            <Testimonial
-              text={KEVIN_TESTIMONIAL}
-              author="Kevin Hsu"
-              title="Co-Founder, Product"
-              company="Standard Metrics"
-              image={KevinHeadshot}
-            />
-          </div>
-        </Section>
+        {/* HIDDEN until more content */}
+        {/*<Section className="pb-16 sm:pb-32">*/}
+        {/*  <div className="flex flex-col justify-start items-center h-full px-8">*/}
+        {/*    <div className="flex justify-start items-center h-24 w-5/6 sm:max-w-[1100px] pb-8">*/}
+        {/*      <div>*/}
+        {/*        <h2*/}
+        {/*          id="testimonials"*/}
+        {/*          className="text-3xl sm:text-4xl font-semibold"*/}
+        {/*        >*/}
+        {/*          Testimonials*/}
+        {/*        </h2>*/}
+        {/*        <hr className="border-2 border-dashed border-smoke" />*/}
+        {/*      </div>*/}
+        {/*    </div>*/}
+        {/*    <Testimonial*/}
+        {/*      text={KEVIN_TESTIMONIAL}*/}
+        {/*      author="Kevin Hsu"*/}
+        {/*      title="Co-Founder, Product"*/}
+        {/*      company="Standard Metrics"*/}
+        {/*      image={KevinHeadshot}*/}
+        {/*    />*/}
+        {/*  </div>*/}
+        {/*</Section>*/}
         <Section className="h-[600px]">
           <form
             onSubmit={handleEmailFormSubmit}
