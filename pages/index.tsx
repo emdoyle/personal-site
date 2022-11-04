@@ -330,7 +330,7 @@ export default function Home() {
             </div>
             <div className="h-full flex flex-col gap-4 pb-6 justify-start items-center text-center w-5/6 sm:max-w-[600px]">
               <p className="text-lg sm:text-xl">
-                Send me a message and I&apos;ll respond within 48 hours.
+                Send me a message and I&apos;ll respond within 24 hours.
               </p>
               <div className="basis-10 w-full flex flex-wrap flex-row justify-between items-center gap-x-8 gap-y-4">
                 <label htmlFor="name-input" className="hidden">

@@ -1,6 +1,5 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
-import Headshot from "../public/headshot.webp";
 
 type Props = {
   text: string;
