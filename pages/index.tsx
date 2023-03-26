@@ -24,7 +24,7 @@ interface HTMLFormEvent
   > {}
 
 export default function Home() {
-  const [selectedWork, setSelectedWork] = useState<Work>(Work.Prometheus);
+  const [selectedWork, setSelectedWork] = useState<Work>(Work.Multiflow);
   const [overlayMenuOpen, setOverlayMenuOpen] = useState<boolean>(false);
   const submittingToastId = useRef<Id | null>(null);
 
@@ -147,16 +147,16 @@ export default function Home() {
               <div className="flex flex-col lg:w-1/2 justify-center items-center gap-2">
                 <div
                   className={`w-full lg:max-w-[500px] p-4 rounded-lg border border-smoke bg-offwhite hover:scale-105 active:scale-100 cursor-pointer ${
-                    selectedWork == Work.Prometheus
+                    selectedWork == Work.Multiflow
                       ? "scale-105 shadow-xl border-2"
                       : ""
                   }`}
-                  onClick={() => setSelectedWork(Work.Prometheus)}
+                  onClick={() => setSelectedWork(Work.Multiflow)}
                 >
                   <div className="flex flex-col justify-center items-start gap-2">
                     <div className="w-full flex flex-wrap justify-between items-center gap-4">
                       <p className="text-lg sm:text-xl min-w-[150px]">
-                        🤖 Prometheus
+                        🤖 MultiFlow
                       </p>
                       <div className="flex justify-between items-center gap-2">
                         <Pill colors="border-ocean text-ocean">React</Pill>

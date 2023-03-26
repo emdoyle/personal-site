@@ -2,7 +2,7 @@ import React from "react";
 import { Work } from "../constants";
 import SlideHome from "../public/slidehome.webp";
 import SquadsSDK from "../public/squads_sdk.webp";
-import Prometheus from "../public/prometheus.webp";
+import Multiflow from "../public/multiflow.webp";
 import Image, { StaticImageData } from "next/image";
 
 type Props = {
@@ -21,8 +21,8 @@ const IMAGES: Record<Work, ImageInfo> = {
     src: SquadsSDK,
     alt: "Squads Logo alongside a code screenshot and text saying @sqds/squads",
   },
-  [Work.Prometheus]: {
-    src: Prometheus,
+  [Work.Multiflow]: {
+    src: Multiflow,
     alt: "Picture containing QuickBooks and Xero logos with back and forth arrows toward a database",
   },
 };
@@ -35,7 +35,6 @@ type LinkInfo = {
 
 const LINKS: Record<Work, LinkInfo[]> = {
   [Work.Slide]: [
-    { link: "https://getslide.xyz", text: "Live Site" },
     {
       link: "https://github.com/emdoyle/slide-programs",
       text: "Github (Backend)",
@@ -51,14 +50,12 @@ const LINKS: Record<Work, LinkInfo[]> = {
   ],
   [Work.Squads]: [
     {
-      link: "https://github.com/Squads-Protocol/squads-mpl/tree/main/sdk",
+      link: "https://github.com/Squads-Protocol/squads-mpl/tree/0d86a80f78b84e5671ba64e485a7433d231fefc1/sdk",
       text: "Github",
     },
     { link: "https://www.npmjs.com/package/@sqds/sdk", text: "NPM" },
   ],
-  [Work.Prometheus]: [
-    { link: "https://prometheus.llm.llc", text: "Live Site" },
-  ],
+  [Work.Multiflow]: [{ link: "https://flow.multi.tech", text: "Live Site" }],
 };
 
 export const FeaturedWork: React.FC<Props> = ({ work }) => {

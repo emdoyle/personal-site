@@ -1,5 +1,5 @@
 export enum Work {
-  Prometheus = 1,
+  Multiflow = 1,
   Slide,
   Squads,
 }
